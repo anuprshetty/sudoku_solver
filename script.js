@@ -19,3 +19,27 @@ document.addEventListener("DOMContentLoaded", function () {
     sudokuGrid.appendChild(newRow);
   }
 });
+
+async function solveSudoku() {
+  const gridSize = 9;
+  const sudokuArray = [];
+
+  // Fill the sudokuArray with input values from the grid
+  for (let row = 0; row < gridSize; row++) {
+    sudokuArray[row] = [];
+    for (let col = 0; col < gridSize; col++) {
+      const cellId = `cell-${row}-${col}`;
+      const cellValue = document.getElementById(cellId).value;
+      sudokuArray[row][col] = cellValue !== "" ? parseInt(cellValue) : 0;
+    }
+  }
+
+  
+
+  
+}
+
+
+
+
+
