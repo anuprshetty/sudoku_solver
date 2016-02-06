@@ -46,10 +46,17 @@ async function solveSudoku() {
     }
   }
 
-  
+  // Solve the sudoku and display the solution
+  if (solveSudokuHelper(sudokuArray)) {
+    for (let row = 0; row < gridSize; row++) {
+      for (let col = 0; col < gridSize; col++) {
+        const cellId = `cell-${row}-${col}`;
+        const cell = document.getElementById(cellId);
+
+        
+      }
+    }
+  } else {
+    alert("No solution exists for the given Sudoku puzzle.");
+  }
 }
-
-
-
-
-
