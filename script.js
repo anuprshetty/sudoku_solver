@@ -53,7 +53,12 @@ async function solveSudoku() {
         const cellId = `cell-${row}-${col}`;
         const cell = document.getElementById(cellId);
 
-        
+        // Fill in solved values and apply animation
+        if (!cell.classList.contains("user-input")) {
+          cell.value = sudokuArray[row][col];
+          cell.classList.add("solved");
+          await sleep(20); // Add a delay for visualization
+        }
       }
     }
   } else {
