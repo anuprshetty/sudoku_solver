@@ -65,3 +65,32 @@ async function solveSudoku() {
     alert("No solution exists for the given Sudoku puzzle.");
   }
 }
+
+function solveSudokuHelper(board) {
+  const gridSize = 9;
+
+  for (let row = 0; row < gridSize; row++) {
+    for (let col = 0; col < gridSize; col++) {
+      if (board[row][col] === 0) {
+        for (let num = 1; num <= 9; num++) {
+          if (isValidMove(board, row, col, num)) {
+            board[row][col] = num;
+
+            // Recursively attempt to solve the Sudoku
+            if (solveSudokuHelper(board)) {
+              return true; // Puzzle solved
+            }
+
+            board[row][col] = 0; // Backtrack
+          }
+        }
+        return false; // No valid number found
+      }
+    }
+  }
+
+  return true; // All cells filled
+}
+
+
+
