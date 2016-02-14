@@ -92,5 +92,17 @@ function solveSudokuHelper(board) {
   return true; // All cells filled
 }
 
+function isValidMove(board, row, col, num) {
+  const gridSize = 9;
 
+  // Check row and column for conflicts
+  for (let i = 0; i < gridSize; i++) {
+    if (board[row][i] === num || board[i][col] === num) {
+      return false; // Conflict found
+    }
+  }
 
+  
+
+  return true; // No conflicts found
+}
