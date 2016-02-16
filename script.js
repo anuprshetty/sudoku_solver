@@ -116,3 +116,7 @@ function isValidMove(board, row, col, num) {
 
   return true; // No conflicts found
 }
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
